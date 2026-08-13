@@ -2,6 +2,8 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { supabase } from "../../../lip/supabase";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(request: Request) {
   try {
     const data = await request.json();
@@ -28,7 +30,10 @@ export async function POST(request: Request) {
     }
 
     // Save quote request to Supabase
-    const { data: savedQuote, error: supabaseError } = await supabase
+    // We intentionally do NOT use .select() here.
+    // This allows us to enable RLS without exposing quote records
+    // back to the customer.
+    const { error: supabaseError } = await supabase
       .from("quote_requests")
       .insert({
         full_name: fullName,
@@ -39,9 +44,7 @@ export async function POST(request: Request) {
         address: address || null,
         cart,
         total: Number(total) || 0,
-      })
-      .select()
-      .single();
+      });
 
     if (supabaseError) {
       console.error("Supabase error:", supabaseError);
@@ -75,23 +78,6 @@ export async function POST(request: Request) {
         `
       )
       .join("");
-
-    // Get Resend API key at runtime
-    const resendApiKey = process.env["RESEND_API_KEY"];
-
-    if (!resendApiKey) {
-      console.error("RESEND_API_KEY is not configured");
-
-      return NextResponse.json(
-        {
-          error: "Email service is not configured",
-        },
-        { status: 500 }
-      );
-    }
-
-    // Create Resend client at runtime
-    const resend = new Resend(resendApiKey);
 
     // Send email through Resend
     const { data: emailData, error: emailError } =
@@ -335,7 +321,6 @@ export async function POST(request: Request) {
         {
           error: "Quote was saved, but email failed",
           details: emailError.message,
-          quoteId: savedQuote?.id,
         },
         { status: 500 }
       );
@@ -345,7 +330,6 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       message: "Quote request saved and email sent successfully",
-      quote: savedQuote,
       email: emailData,
     });
   } catch (error) {
