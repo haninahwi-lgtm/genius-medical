@@ -2,8 +2,6 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { supabase } from "../../../lip/supabase";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
     const data = await request.json();
@@ -77,6 +75,23 @@ export async function POST(request: Request) {
         `
       )
       .join("");
+
+    // Get Resend API key at runtime
+    const resendApiKey = process.env["RESEND_API_KEY"];
+
+    if (!resendApiKey) {
+      console.error("RESEND_API_KEY is not configured");
+
+      return NextResponse.json(
+        {
+          error: "Email service is not configured",
+        },
+        { status: 500 }
+      );
+    }
+
+    // Create Resend client at runtime
+    const resend = new Resend(resendApiKey);
 
     // Send email through Resend
     const { data: emailData, error: emailError } =
