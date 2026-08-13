@@ -29,10 +29,10 @@ export async function POST(request: Request) {
       );
     }
 
-    // Save quote request to Supabase
-    // We intentionally do NOT use .select() here.
-    // This allows us to enable RLS without exposing quote records
-    // back to the customer.
+    // Save quote request to Supabase.
+    // IMPORTANT:
+    // We intentionally do NOT use .select().single() here.
+    // With RLS enabled, that would require SELECT permission.
     const { error: supabaseError } = await supabase
       .from("quote_requests")
       .insert({
@@ -314,6 +314,7 @@ export async function POST(request: Request) {
         `,
       });
 
+    // Check whether Resend successfully sent the email
     if (emailError) {
       console.error("Resend error:", emailError);
 
