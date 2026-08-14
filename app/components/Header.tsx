@@ -18,7 +18,6 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4">
-
           <Image
             src="/images/logo.png"
             alt="Genius Medical Logo"
@@ -36,12 +35,10 @@ export default function Header() {
               العبقرية الطبية
             </p>
           </div>
-
         </Link>
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-8 font-medium text-gray-700">
-
           <Link
             href="/"
             className="hover:text-purple-700 transition"
@@ -71,24 +68,29 @@ export default function Header() {
           </Link>
 
           <Link
-            href="#"
+            href="/contact"
             className="hover:text-purple-700 transition"
           >
             Contact
           </Link>
-
         </nav>
 
         {/* Right Side */}
         <div className="flex items-center gap-6">
 
-          <button className="border border-purple-700 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition">
+          {/* Arabic */}
+          <button
+            type="button"
+            className="border border-purple-700 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition"
+          >
             العربية
           </button>
 
+          {/* Cart */}
           <Link
             href="/cart"
             className="relative text-2xl hover:scale-110 transition"
+            aria-label="Shopping cart"
           >
             🛒
 
@@ -97,11 +99,9 @@ export default function Header() {
                 {totalItems}
               </span>
             )}
-
           </Link>
 
         </div>
-
       </div>
     </header>
   );
