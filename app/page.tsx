@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 
@@ -28,13 +29,21 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex gap-5">
-                <button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold">
+                {/* Shop Now */}
+                <Link
+                  href="/products"
+                  className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
+                >
                   Shop Now
-                </button>
+                </Link>
 
-                <button className="border border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-700 transition">
+                {/* Contact Us */}
+                <Link
+                  href="/contact"
+                  className="border border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-700 transition"
+                >
                   Contact Us
-                </button>
+                </Link>
               </div>
             </div>
           </div>
