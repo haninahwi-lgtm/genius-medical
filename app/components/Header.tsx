@@ -31,7 +31,7 @@ export default function Header() {
               Genius Medical
             </h1>
 
-            <p className="text-sm text-pink-600 font-medium">
+            <p className="text-2xl font-bold text-pink-600">
               العبقرية الطبية
             </p>
           </div>
