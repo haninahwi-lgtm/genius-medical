@@ -39,6 +39,7 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-8 font-medium text-gray-700">
+
           <Link
             href="/"
             className="hover:text-purple-700 transition"
@@ -73,6 +74,7 @@ export default function Header() {
           >
             Contact
           </Link>
+
         </nav>
 
         {/* Right Side */}
@@ -91,6 +93,7 @@ export default function Header() {
             href="/cart"
             className="relative text-2xl hover:scale-110 transition"
             aria-label="Shopping cart"
+            id="cart-icon"
           >
             🛒
 
@@ -99,6 +102,7 @@ export default function Header() {
                 {totalItems}
               </span>
             )}
+
           </Link>
 
         </div>

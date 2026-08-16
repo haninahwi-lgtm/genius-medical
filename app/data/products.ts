@@ -13,7 +13,7 @@ export const products = [
     description:
       "Premium electric ICU hospital bed with adjustable height, backrest and leg support. Designed for intensive care units and hospitals.",
 
-    price: "$2,450",
+    price: "SAR 2,450",
   },
 
   {
@@ -30,7 +30,7 @@ export const products = [
     description:
       "Manual hospital bed designed for clinics, recovery rooms and patient care.",
 
-    price: "$980",
+    price: "SAR 980",
   },
 
   {
@@ -48,7 +48,7 @@ export const products = [
     description:
       "Professional patient monitoring system with ECG, SpO₂, blood pressure and temperature monitoring.",
 
-    price: "$1,200",
+    price: "SAR 1,200",
   },
 
   {
@@ -66,7 +66,7 @@ export const products = [
     description:
       "Lightweight wheelchair for hospitals, rehabilitation centers and home care.",
 
-    price: "$340",
+    price: "SAR 340",
   },
 
   {
@@ -84,6 +84,6 @@ export const products = [
     description:
       "Premium medical examination gloves providing protection and comfort.",
 
-    price: "$12 / Box",
+    price: "SAR 12 / Box",
   },
 ];

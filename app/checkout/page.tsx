@@ -197,7 +197,7 @@ export default function CheckoutPage() {
                     <span>Total</span>
 
                     <span className="text-purple-700">
-                      ${total.toFixed(2)}
+                      SAR {total.toFixed(2)}
                     </span>
 
                   </div>

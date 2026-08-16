@@ -21,12 +21,16 @@ export default function CartPage() {
   return (
     <main className="pt-32 pb-20 bg-gray-100 min-h-screen">
       <div className="max-w-7xl mx-auto px-8">
+
+        {/* Page Title */}
         <h1 className="text-5xl font-bold text-purple-700 mb-12">
           Shopping Cart
         </h1>
 
         {cart.length === 0 ? (
+          /* Empty Cart */
           <div className="bg-white rounded-2xl shadow-lg p-16 text-center">
+
             <h2 className="text-3xl font-bold">
               Your cart is empty
             </h2>
@@ -37,14 +41,17 @@ export default function CartPage() {
 
             <Link
               href="/products"
-              className="inline-block mt-8 bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold"
+              className="inline-block mt-8 bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
             >
               Continue Shopping
             </Link>
+
           </div>
         ) : (
           <>
+            {/* Cart Items */}
             <div className="space-y-6">
+
               {cart.map((item) => {
                 const price = Number(
                   item.price.replace(/[^0-9.]/g, "")
@@ -57,7 +64,10 @@ export default function CartPage() {
                     key={item.slug}
                     className="bg-white rounded-2xl shadow-lg p-6 flex flex-col lg:flex-row items-center justify-between gap-6"
                   >
+
+                    {/* Product Information */}
                     <div className="flex items-center gap-6">
+
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -67,6 +77,7 @@ export default function CartPage() {
                       />
 
                       <div>
+
                         <h2 className="text-2xl font-bold">
                           {item.name}
                         </h2>
@@ -78,10 +89,14 @@ export default function CartPage() {
                         <p className="text-purple-700 font-bold text-xl">
                           {item.price}
                         </p>
+
                       </div>
                     </div>
 
+
+                    {/* Quantity Controls */}
                     <div className="flex items-center gap-4">
+
                       <button
                         onClick={() =>
                           decreaseQuantity(item.slug)
@@ -103,18 +118,25 @@ export default function CartPage() {
                       >
                         +
                       </button>
+
                     </div>
 
+
+                    {/* Subtotal */}
                     <div className="text-center">
+
                       <p className="text-gray-500">
                         Subtotal
                       </p>
 
                       <p className="text-2xl font-bold text-purple-700">
-                        ${subtotal.toFixed(2)}
+                        SAR {subtotal.toFixed(2)}
                       </p>
+
                     </div>
 
+
+                    {/* Remove */}
                     <button
                       onClick={() =>
                         removeFromCart(item.slug)
@@ -123,23 +145,43 @@ export default function CartPage() {
                     >
                       Remove
                     </button>
+
                   </div>
                 );
               })}
+
             </div>
 
+
+            {/* Order Summary */}
             <div className="bg-white rounded-2xl shadow-lg p-8 mt-12">
-              <div className="flex justify-between items-center">
+
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+
                 <h2 className="text-3xl font-bold">
                   Order Summary
                 </h2>
 
                 <h2 className="text-4xl font-bold text-purple-700">
-                  ${total.toFixed(2)}
+                  SAR {total.toFixed(2)}
                 </h2>
+
               </div>
 
-              <div className="flex gap-5 mt-10">
+
+              {/* Cart Actions */}
+              <div className="flex flex-wrap gap-5 mt-10">
+
+                {/* Continue Shopping */}
+                <Link
+                  href="/products"
+                  className="border border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white px-10 py-4 rounded-xl font-semibold transition"
+                >
+                  Continue Shopping
+                </Link>
+
+
+                {/* Proceed to Checkout */}
                 <Link
                   href="/checkout"
                   className="bg-purple-700 hover:bg-purple-800 text-white px-10 py-4 rounded-xl font-semibold transition"
@@ -147,16 +189,21 @@ export default function CartPage() {
                   Proceed to Checkout
                 </Link>
 
+
+                {/* Clear Cart */}
                 <button
                   onClick={clearCart}
                   className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-10 py-4 rounded-xl font-semibold transition"
                 >
                   Clear Cart
                 </button>
+
               </div>
+
             </div>
           </>
         )}
+
       </div>
     </main>
   );
