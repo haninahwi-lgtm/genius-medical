@@ -93,6 +93,55 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* About Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-5xl mx-auto px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl font-bold text-purple-700">
+                About Genius Medical
+              </h2>
+
+              <p className="mt-4 text-xl font-semibold text-gray-700">
+                Reliable Medical Equipment. Professional Service.
+              </p>
+            </div>
+
+            <div className="text-lg text-gray-600 leading-8 space-y-6">
+              <p>
+                Genius Medical is a Saudi-based medical equipment provider
+                dedicated to supporting hospitals, clinics, healthcare
+                professionals, and home-care needs with reliable medical
+                equipment and healthcare solutions.
+              </p>
+
+              <p>
+                We make sourcing medical equipment simple and dependable by
+                offering a carefully selected range of products across
+                essential healthcare categories, with a focus on quality,
+                practicality, and customer service.
+              </p>
+
+              <p>
+                Whether you are equipping a healthcare facility, replacing
+                existing equipment, or looking for solutions for home
+                healthcare and rehabilitation, our team is committed to
+                helping you find the right products for your needs.
+              </p>
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-xl font-semibold text-purple-700">
+                Genius Medical
+              </p>
+
+              <p className="mt-2 text-gray-600">
+                Supporting better healthcare through dependable equipment
+                and service.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
