@@ -35,7 +35,6 @@ export const products = [
 
   {
     slug: "patient-monitor",
-
     category: "patient-monitors",
 
     name: "Patient Monitor",
@@ -53,7 +52,6 @@ export const products = [
 
   {
     slug: "wheelchair",
-
     category: "wheelchairs",
 
     name: "Wheelchair",
@@ -71,7 +69,6 @@ export const products = [
 
   {
     slug: "medical-gloves",
-
     category: "medical-gloves",
 
     name: "Medical Gloves",
@@ -85,5 +82,39 @@ export const products = [
       "Premium medical examination gloves providing protection and comfort.",
 
     price: "SAR 12 / Box",
+  },
+
+  {
+    slug: "soundsleep-cpap",
+    category: "cpap-bpap",
+
+    name: "SoundSleep CPAP",
+
+    image: "/images/soundsleep-cpap-bpap-hq.png",
+
+    shortDescription:
+      "SoundSleep CPAP device for sleep therapy.",
+
+    description:
+      "SoundSleep CPAP device from the SoundSleep series of CPAP and BPAP devices.",
+
+    price: "SAR 2,200",
+  },
+
+  {
+    slug: "soundsleep-bpap",
+    category: "cpap-bpap",
+
+    name: "SoundSleep BPAP",
+
+    image: "/images/soundsleep-cpap-bpap-hq.png",
+
+    shortDescription:
+      "SoundSleep BPAP device for sleep therapy.",
+
+    description:
+      "SoundSleep BPAP device from the SoundSleep series of CPAP and BPAP devices.",
+
+    price: "SAR 3,500",
   },
 ];

@@ -16,13 +16,15 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
-      <Image
-        src={image}
-        alt={name}
-        width={400}
-        height={300}
-        className="w-full h-64 object-cover"
-      />
+      <div className="w-full h-64 bg-white flex items-center justify-center">
+        <Image
+          src={image}
+          alt={name}
+          width={400}
+          height={300}
+          className="w-full h-full object-contain"
+        />
+      </div>
 
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-2xl font-bold text-purple-700">
