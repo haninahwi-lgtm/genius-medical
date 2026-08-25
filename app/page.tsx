@@ -21,7 +21,7 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-8">
             <div className="max-w-xl">
 
-              <h1 className="text-6xl font-bold text-white leading-tight">
+              <h1 className="text-6xl font-bold text-white leading-tight animate-fade-up">
                 Medical Equipment
                 <br />
                 You Can Trust
