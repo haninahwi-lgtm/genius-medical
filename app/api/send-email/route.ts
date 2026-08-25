@@ -284,7 +284,7 @@ export async function POST(request: Request) {
                         color:#6d28d9;
                       "
                     >
-                      Total: $${total}
+                      Total: SAR ${Number(total).toFixed(2)}
                     </h2>
                   </div>
 
