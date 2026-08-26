@@ -1,7 +1,20 @@
+import Link from "next/link";
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gray-100 py-16 px-6">
       <div className="max-w-6xl mx-auto">
+
+        {/* Back to Home */}
+        <div className="mb-8">
+          <Link
+            href="/"
+            className="text-purple-700 font-semibold hover:text-purple-900 transition"
+          >
+            ← Back to Home
+          </Link>
+        </div>
+
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-purple-700">
             Contact Genius Medical
@@ -13,6 +26,7 @@ export default function ContactPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
+
           {/* Contact Information */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -20,6 +34,7 @@ export default function ContactPage() {
             </h2>
 
             <div className="space-y-6">
+
               <div>
                 <h3 className="font-semibold text-purple-700">Phone</h3>
                 <a
@@ -74,11 +89,13 @@ export default function ContactPage() {
                   Friday: 4:00 PM – 10:00 PM
                 </p>
               </div>
+
             </div>
           </div>
 
           {/* Contact CTA */}
           <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center">
+
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Need Medical Equipment?
             </h2>
@@ -89,6 +106,7 @@ export default function ContactPage() {
             </p>
 
             <div className="flex flex-col gap-4">
+
               <a
                 href="https://wa.me/966544592923"
                 target="_blank"
@@ -111,8 +129,10 @@ export default function ContactPage() {
               >
                 Call Us
               </a>
+
             </div>
           </div>
+
         </div>
       </div>
     </main>

@@ -31,7 +31,7 @@ export default function Header() {
               Genius Medical
             </h1>
 
-            <p className="text-2xl font-bold text-pink-600">
+            <p className="text-3xl font-bold text-pink-600 leading-none tracking-wide">
               العبقرية الطبية
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="#"
+            href="/about"
             className="hover:text-purple-700 transition"
           >
             About
