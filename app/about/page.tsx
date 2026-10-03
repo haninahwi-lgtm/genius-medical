@@ -21,8 +21,9 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-8">
-              Reliable medical equipment and practical healthcare solutions
-              for professionals, healthcare facilities, and home care.
+              Reliable medical equipment, healthcare supplies, and practical
+              healthcare solutions for professionals, healthcare facilities,
+              and home care.
             </p>
 
           </div>
@@ -37,24 +38,25 @@ export default function AboutPage() {
             <div className="space-y-6 text-lg text-gray-600 leading-8">
 
               <p>
-                Genius Medical is a Saudi-based medical equipment provider
-                dedicated to supporting hospitals, clinics, healthcare
-                professionals, and home-care needs with dependable medical
-                equipment and healthcare solutions.
+                Genius Medical is a Saudi-based provider of medical equipment
+                and healthcare supplies, dedicated to supporting hospitals,
+                clinics, healthcare professionals, and home-care needs with
+                dependable products and practical healthcare solutions.
               </p>
 
               <p>
-                We make sourcing medical equipment simple and dependable
-                by offering a carefully selected range of products across
-                essential healthcare categories, with a focus on quality,
-                practicality, and customer service.
+                We make sourcing medical equipment and healthcare supplies
+                simple and dependable by offering a carefully selected range
+                of products across essential healthcare categories, with a
+                focus on quality, practicality, and customer service.
               </p>
 
               <p>
                 Whether you are equipping a healthcare facility, replacing
-                existing equipment, or looking for solutions for home
-                healthcare and rehabilitation, our team is committed to
-                helping you find the right products for your needs.
+                existing equipment, stocking essential medical supplies, or
+                looking for solutions for home healthcare and rehabilitation,
+                our team is committed to helping you find the right products
+                for your needs.
               </p>
 
             </div>
@@ -91,8 +93,9 @@ export default function AboutPage() {
                 </h3>
 
                 <p className="mt-3 text-gray-600 leading-7">
-                  Carefully selected equipment for a range of healthcare
-                  environments and everyday medical needs.
+                  Carefully selected medical equipment and healthcare
+                  supplies for a range of healthcare environments and
+                  everyday medical needs.
                 </p>
 
               </div>
@@ -128,7 +131,7 @@ export default function AboutPage() {
 
                 <p className="mt-3 text-gray-600 leading-7">
                   Our goal is to make finding and sourcing medical equipment
-                  straightforward and dependable.
+                  and healthcare supplies straightforward and dependable.
                 </p>
 
               </div>
@@ -159,7 +162,7 @@ export default function AboutPage() {
           <div className="mt-12 bg-purple-50 rounded-3xl px-8 py-12 text-center">
 
             <h2 className="text-3xl font-bold text-gray-900">
-              Need help finding the right equipment?
+              Need help finding the right equipment or supplies?
             </h2>
 
             <p className="mt-4 text-lg text-gray-600">

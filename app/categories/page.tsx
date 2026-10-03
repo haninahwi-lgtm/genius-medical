@@ -47,7 +47,8 @@ export default function CategoriesPage() {
             </h1>
 
             <p className="mt-4 text-gray-600 text-lg">
-              Browse our complete range of medical equipment.
+              Browse our complete range of medical equipment and healthcare
+              supplies.
             </p>
           </div>
 

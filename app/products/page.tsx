@@ -17,7 +17,7 @@ export default function ProductsPage() {
             </h1>
 
             <p className="mt-4 text-lg text-gray-600">
-              Browse our professional medical equipment.
+              Browse our professional medical equipment and healthcare supplies.
             </p>
           </div>
 

@@ -22,7 +22,7 @@ export default function Home() {
             <div className="max-w-xl">
 
               <h1 className="text-6xl font-bold text-white leading-tight animate-fade-up">
-                Medical Equipment
+                Medical & Equipment Supplies 
                 <br />
                 You Can Trust
               </h1>
