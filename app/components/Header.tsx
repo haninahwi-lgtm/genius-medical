@@ -3,16 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
 
 export default function Header() {
-  const { cart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const totalItems = cart.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -100,7 +93,7 @@ export default function Header() {
         </nav>
 
         {/* Right Side */}
-        <div className="flex items-center gap-2 sm:gap-6 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
 
           {/* Arabic Button */}
           <button
@@ -110,19 +103,12 @@ export default function Header() {
             العربية
           </button>
 
-          {/* Cart */}
+          {/* Get in Touch */}
           <Link
-            href="/cart"
-            className="relative text-xl sm:text-2xl hover:scale-110 transition"
-            aria-label="Shopping cart"
+            href="/contact"
+            className="hidden sm:inline-block bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap transition"
           >
-            🛒
-
-            {totalItems > 0 && (
-              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
+            Get in Touch
           </Link>
 
           {/* Mobile Menu Button */}
@@ -180,9 +166,17 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={closeMenu}
-              className="py-3 font-medium text-gray-700 hover:text-purple-700"
+              className="py-3 font-medium text-gray-700 hover:text-purple-700 border-b border-gray-100"
             >
               Contact
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="mt-3 bg-purple-700 hover:bg-purple-800 text-white py-3 rounded-xl font-semibold text-center transition"
+            >
+              Get in Touch
             </Link>
 
           </div>

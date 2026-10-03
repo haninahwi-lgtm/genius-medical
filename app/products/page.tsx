@@ -13,11 +13,12 @@ export default function ProductsPage() {
           {/* Page Heading */}
           <div className="text-center mb-14">
             <h1 className="text-5xl font-bold text-purple-700">
-              Our Products
+              Medical Equipment & Supplies
             </h1>
 
-            <p className="mt-4 text-lg text-gray-600">
-              Browse our professional medical equipment and healthcare supplies.
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our product range and contact us for pricing,
+              availability, and quotations.
             </p>
           </div>
 

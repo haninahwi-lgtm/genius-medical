@@ -18,28 +18,29 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-black/45"></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-8">
-            <div className="max-w-xl">
+          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6 sm:px-8">
+            <div className="max-w-2xl">
 
-              <h1 className="text-6xl font-bold text-white leading-tight animate-fade-up">
-                Medical & Equipment Supplies 
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-up">
+                Medical & Equipment
                 <br />
-                You Can Trust
+                Supplies You Can Trust
               </h1>
 
-              <p className="mt-8 text-xl text-gray-200">
-                Premium medical equipment for hospitals, clinics, home
-                healthcare and rehabilitation.
+              <p className="mt-6 sm:mt-8 text-base sm:text-xl text-gray-200">
+                Premium medical equipment and healthcare supplies for
+                hospitals, clinics, schools, sports clubs, home healthcare,
+                rehabilitation centers, and other organizations.
               </p>
 
               <div className="mt-10 flex gap-5">
 
-                {/* Shop Now */}
+                {/* Explore Products */}
                 <Link
                   href="/products"
                   className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
                 >
-                  Shop Now
+                  Explore Products
                 </Link>
 
                 {/* Contact Us */}

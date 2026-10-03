@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/Header";
-import AddToCartButton from "../../components/AddToCartButton";
 import { products } from "../../data/products";
 
 type Props = {
@@ -80,24 +79,23 @@ export default async function ProductDetails({ params }: Props) {
                 {product.description}
               </p>
 
-              <p className="mt-8 text-3xl font-bold text-purple-700">
-                {product.price}
-              </p>
+              <div className="flex gap-5 mt-12 flex-wrap">
 
-              <div className="flex gap-5 mt-12">
+                {/* Request a Quote */}
+                <Link
+                  href="/contact"
+                  className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
+                >
+                  Request a Quote
+                </Link>
 
-                <AddToCartButton
-                  slug={product.slug}
-                  name={product.name}
-                  image={product.image}
-                  price={product.price}
-                />
-
-                <button
+                {/* Contact Us */}
+                <Link
+                  href="/contact"
                   className="border border-purple-700 text-purple-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-700 hover:text-white transition"
                 >
                   Contact Us
-                </button>
+                </Link>
 
               </div>
             </div>

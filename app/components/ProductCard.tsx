@@ -39,7 +39,7 @@ export default function ProductCard({
           href={link}
           className="mt-6 w-full bg-purple-700 hover:bg-purple-800 text-white py-3 rounded-xl font-semibold text-center transition"
         >
-          View Products
+          View Details
         </Link>
       </div>
     </div>
