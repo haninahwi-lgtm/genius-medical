@@ -19,14 +19,14 @@ export default async function ProductDetails({ params }: Props) {
       <>
         <Header />
 
-        <main className="pt-36 text-center min-h-screen bg-gray-100">
+        <main className="pt-40 text-center min-h-screen bg-gray-100">
           <h1 className="text-5xl font-bold">
             Product Not Found
           </h1>
 
           <Link
             href="/products"
-            className="mt-8 inline-block text-purple-700 font-semibold"
+            className="mt-8 inline-block text-purple-700 font-semibold hover:underline"
           >
             ← Back to Products
           </Link>
@@ -42,8 +42,8 @@ export default async function ProductDetails({ params }: Props) {
     <>
       <Header />
 
-      <main className="pt-36 pb-20 bg-gray-100 min-h-screen">
-        <div className="max-w-7xl mx-auto px-8">
+      <main className="pt-40 pb-20 bg-gray-100 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
           {/* Back to Products */}
           <Link
@@ -54,11 +54,11 @@ export default async function ProductDetails({ params }: Props) {
           </Link>
 
           {/* Product Overview */}
-          <div className="grid lg:grid-cols-2 gap-16 mt-8">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mt-8">
 
             {/* Product Image */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="relative w-full h-[500px]">
+              <div className="relative w-full h-[380px] sm:h-[500px]">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -70,56 +70,56 @@ export default async function ProductDetails({ params }: Props) {
             </div>
 
             {/* Product Information */}
-            <div>
-              <h1 className="text-5xl font-bold text-purple-700">
+            <div className="flex flex-col justify-center">
+
+              <h1 className="text-4xl sm:text-5xl font-bold text-purple-700">
                 {product.name}
               </h1>
 
-              <p className="mt-8 text-lg text-gray-600 leading-8">
+              <p className="mt-6 sm:mt-8 text-lg text-gray-600 leading-8">
                 {product.description}
               </p>
 
-              <div className="flex gap-5 mt-12 flex-wrap">
+              {/* Contact CTA */}
+              <div className="mt-8 sm:mt-12">
 
-                {/* Request a Quote */}
                 <Link
                   href="/contact"
-                  className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
-                >
-                  Request a Quote
-                </Link>
-
-                {/* Contact Us */}
-                <Link
-                  href="/contact"
-                  className="border border-purple-700 text-purple-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-700 hover:text-white transition"
+                  className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
                 >
                   Contact Us
                 </Link>
 
               </div>
+
             </div>
           </div>
 
           {/* Specifications & Features */}
           {(isCPAP || isBPAP) && (
-            <div className="mt-20">
+            <div className="mt-16 sm:mt-20">
 
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-purple-700">
+              {/* Section Heading */}
+              <div className="text-center mb-10 sm:mb-12">
+
+                <p className="text-purple-700 font-semibold uppercase tracking-wider">
+                  Product Information
+                </p>
+
+                <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
                   Specifications & Features
                 </h2>
 
                 <p className="mt-4 text-lg text-gray-600">
-                  SoundSleep series CPAP and BPAP system
-                  specifications.
+                  SoundSleep series CPAP and BPAP system specifications.
                 </p>
+
               </div>
 
               {/* Key Features */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 mb-10">
+              <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-10">
 
-                <h3 className="text-3xl font-bold mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-8">
                   Key Features
                 </h3>
 
@@ -229,14 +229,14 @@ export default async function ProductDetails({ params }: Props) {
               </div>
 
               {/* Technical Specifications */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
 
-                <h3 className="text-3xl font-bold mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-8">
                   Technical Specifications
                 </h3>
 
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
+                  <table className="w-full border-collapse min-w-[600px]">
 
                     <thead>
                       <tr className="bg-purple-700 text-white">
@@ -364,9 +364,8 @@ export default async function ProductDetails({ params }: Props) {
               </div>
 
               <p className="mt-6 text-sm text-gray-500">
-                Specifications shown are based on the
-                SoundSleep CPAP and BPAP product brochure.
-                Specifications may vary by model.
+                Specifications shown are based on the SoundSleep CPAP and BPAP
+                product brochure. Specifications may vary by model.
               </p>
 
             </div>
