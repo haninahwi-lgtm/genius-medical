@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
+import { products } from "./data/products";
 
 export default function Home() {
+  const featuredProducts = products.slice(0, 4);
+
   return (
     <>
       <Header />
@@ -35,7 +38,6 @@ export default function Home() {
 
               <div className="mt-10 flex gap-5">
 
-                {/* Explore Products */}
                 <Link
                   href="/products"
                   className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
@@ -43,7 +45,6 @@ export default function Home() {
                   Explore Products
                 </Link>
 
-                {/* Contact Us */}
                 <Link
                   href="/contact"
                   className="border border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-700 transition"
@@ -58,61 +59,164 @@ export default function Home() {
 
 
         {/* =========================
-            FEATURED CATEGORIES
+            WHO WE SERVE
         ========================== */}
-        <section className="py-24 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-8">
+        <section className="py-20 sm:py-24 bg-gray-100">
 
-            <div className="text-center mb-14">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
-              <h2 className="text-5xl font-bold text-purple-700">
-                Featured Categories
+            <div className="text-center mb-12">
+
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
+                Who We Serve
               </h2>
 
-              <p className="mt-4 text-gray-600 text-lg">
-                Explore our most popular medical equipment.
+              <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto leading-8">
+                We provide medical equipment and healthcare supplies for
+                healthcare facilities, professionals, organizations, and
+                individuals across Saudi Arabia.
               </p>
 
             </div>
 
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              {/* Hospital Beds */}
-              <ProductCard
-                name="Hospital Beds"
-                image="/images/hospital-bed.webp"
-                description="Electric and manual beds designed for hospitals and clinics."
-                link="/categories/hospital-beds"
-              />
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Hospitals & Clinics
+                </h3>
 
-              {/* Patient Monitors */}
-              <ProductCard
-                name="Patient Monitors"
-                image="/images/monitor.webp"
-                description="High-precision monitoring systems for patient care."
-                link="/categories/patient-monitors"
-              />
+                <p className="mt-3 text-gray-600 leading-7">
+                  Medical equipment and supplies to support patient care and
+                  healthcare facilities.
+                </p>
+              </div>
 
-              {/* Wheelchairs */}
-              <ProductCard
-                name="Wheelchairs"
-                image="/images/wheelchair.webp"
-                description="Comfortable mobility solutions for healthcare facilities."
-                link="/categories/wheelchairs"
-              />
 
-              {/* Medical Gloves */}
-              <ProductCard
-                name="Medical Gloves"
-                image="/images/gloves.webp"
-                description="Premium disposable gloves for medical professionals."
-                link="/categories/medical-gloves"
-              />
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Healthcare Professionals
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Practical equipment and supplies for doctors, nurses, and
+                  other healthcare professionals.
+                </p>
+              </div>
+
+
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Schools & Sports Clubs
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Healthcare and first-aid supplies for schools, sports clubs,
+                  and active organizations.
+                </p>
+              </div>
+
+
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Home Healthcare
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Equipment and supplies that support healthcare needs at
+                  home.
+                </p>
+              </div>
+
+
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Rehabilitation Centers
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Medical and rehabilitation equipment for care and recovery
+                  environments.
+                </p>
+              </div>
+
+
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+                <h3 className="text-xl font-bold text-purple-700">
+                  Organizations
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Healthcare supplies and equipment for organizations with
+                  medical and workplace needs.
+                </p>
+              </div>
 
             </div>
 
           </div>
+
+        </section>
+
+
+        {/* =========================
+            OUR PRODUCTS
+        ========================== */}
+        <section className="py-20 sm:py-24 bg-white">
+
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+
+            {/* Section Heading */}
+            <div className="text-center mb-12">
+
+              <p className="text-purple-700 font-semibold uppercase tracking-wider">
+                Our Products
+              </p>
+
+              <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-gray-900">
+                Medical Equipment & Healthcare Supplies
+              </h2>
+
+              <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto leading-8">
+                Explore a selection of medical equipment and healthcare
+                supplies that we can provide for different healthcare and
+                organizational needs.
+              </p>
+
+            </div>
+
+
+            {/* Featured Products */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+              {featuredProducts.map((product) => (
+                <ProductCard
+                  key={product.slug}
+                  name={product.name}
+                  image={product.image}
+                  description={product.shortDescription}
+                  link={`/products/${product.slug}`}
+                />
+              ))}
+
+            </div>
+
+
+            {/* View All Products */}
+            <div className="mt-12 text-center">
+
+              <Link
+                href="/products"
+                className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
+              >
+                View All Products
+              </Link>
+
+            </div>
+
+          </div>
+
         </section>
 
       </main>

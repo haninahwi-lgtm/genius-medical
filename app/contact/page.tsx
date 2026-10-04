@@ -1,140 +1,169 @@
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-100 py-16 px-6">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <Header />
 
-        {/* Back to Home */}
-        <div className="mb-8">
-          <Link
-            href="/"
-            className="text-purple-700 font-semibold hover:text-purple-900 transition"
-          >
-            ← Back to Home
-          </Link>
-        </div>
+      <main className="min-h-screen bg-gray-100 pt-48 pb-16 px-6">
+        <div className="max-w-6xl mx-auto">
 
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-700">
-            Contact Genius Medical
-          </h1>
+          {/* Back to Home */}
+          <div className="mb-8">
+            <Link
+              href="/"
+              className="text-purple-700 font-semibold hover:text-purple-900 transition"
+            >
+              ← Back to Home
+            </Link>
+          </div>
 
-          <p className="mt-4 text-lg text-gray-600">
-            We are here to help with your medical equipment needs.
-          </p>
-        </div>
+          {/* Page Heading */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-purple-700">
+              Contact Genius Medical
+            </h1>
 
-        <div className="grid md:grid-cols-2 gap-8">
+            <p className="mt-4 text-lg text-gray-600">
+              We are here to help with your medical equipment needs.
+            </p>
+          </div>
 
-          {/* Contact Information */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Contact Information
-            </h2>
+          {/* Contact Sections */}
+          <div className="grid md:grid-cols-2 gap-8">
 
-            <div className="space-y-6">
+            {/* Contact Information */}
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Contact Information
+              </h2>
 
-              <div>
-                <h3 className="font-semibold text-purple-700">Phone</h3>
-                <a
-                  href="tel:+966138423946"
-                  className="text-gray-700 hover:text-purple-700"
-                >
-                  +966 13 842 3946
-                </a>
+              <div className="space-y-6">
+
+                {/* Phone */}
+                <div>
+                  <h3 className="font-semibold text-purple-700">
+                    Phone
+                  </h3>
+
+                  <a
+                    href="tel:+966138423946"
+                    className="text-gray-700 hover:text-purple-700"
+                  >
+                    +966 13 842 3946
+                  </a>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <h3 className="font-semibold text-purple-700">
+                    Email
+                  </h3>
+
+                  <a
+                    href="mailto:info@genius.com.sa"
+                    className="text-gray-700 hover:text-purple-700"
+                  >
+                    info@genius.com.sa
+                  </a>
+                </div>
+
+                {/* WhatsApp */}
+                <div>
+                  <h3 className="font-semibold text-purple-700">
+                    WhatsApp
+                  </h3>
+
+                  <a
+                    href="https://wa.me/966544592923"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-purple-700"
+                  >
+                    +966 54 459 2923
+                  </a>
+                </div>
+
+                {/* Address */}
+                <div>
+                  <h3 className="font-semibold text-purple-700">
+                    Address
+                  </h3>
+
+                  <p className="text-gray-700">
+                    Al Badiyah, 28th Street
+                    <br />
+                    Dammam 32243
+                    <br />
+                    Saudi Arabia
+                  </p>
+                </div>
+
+                {/* Business Hours */}
+                <div>
+                  <h3 className="font-semibold text-purple-700">
+                    Business Hours
+                  </h3>
+
+                  <p className="text-gray-700">
+                    Saturday – Thursday: 9:00 AM – 10:30 PM
+                    <br />
+                    Friday: 4:00 PM – 10:00 PM
+                  </p>
+                </div>
+
               </div>
+            </div>
 
-              <div>
-                <h3 className="font-semibold text-purple-700">Email</h3>
-                <a
-                  href="mailto:info@genius.com.sa"
-                  className="text-gray-700 hover:text-purple-700"
-                >
-                  info@genius.com.sa
-                </a>
-              </div>
+            {/* Contact CTA */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center">
 
-              <div>
-                <h3 className="font-semibold text-purple-700">WhatsApp</h3>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Need Medical Equipment?
+              </h2>
+
+              <p className="text-gray-600 mb-8">
+                Contact our team for product information, pricing,
+                availability, and quote requests.
+              </p>
+
+              <div className="flex flex-col gap-4">
+
+                {/* WhatsApp */}
                 <a
                   href="https://wa.me/966544592923"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-purple-700"
+                  className="text-center bg-purple-700 hover:bg-purple-800 text-white font-semibold py-4 px-6 rounded-xl transition"
                 >
-                  +966 54 459 2923
+                  Contact Us on WhatsApp
                 </a>
-              </div>
 
-              <div>
-                <h3 className="font-semibold text-purple-700">Address</h3>
-                <p className="text-gray-700">
-                  Al Badiyah, 28th Street
-                  <br />
-                  Dammam 32243
-                  <br />
-                  Saudi Arabia
-                </p>
-              </div>
+                {/* Email */}
+                <a
+                  href="mailto:info@genius.com.sa"
+                  className="text-center border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white font-semibold py-4 px-6 rounded-xl transition"
+                >
+                  Email Us
+                </a>
 
-              <div>
-                <h3 className="font-semibold text-purple-700">
-                  Business Hours
-                </h3>
+                {/* Phone */}
+                <a
+                  href="tel:+966138423946"
+                  className="text-center border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white font-semibold py-4 px-6 rounded-xl transition"
+                >
+                  Call Us
+                </a>
 
-                <p className="text-gray-700">
-                  Saturday – Thursday: 9:00 AM – 10:30 PM
-                  <br />
-                  Friday: 4:00 PM – 10:00 PM
-                </p>
               </div>
 
             </div>
-          </div>
 
-          {/* Contact CTA */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center">
-
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Need Medical Equipment?
-            </h2>
-
-            <p className="text-gray-600 mb-8">
-              Contact our team for product information, pricing,
-              availability, and quote requests.
-            </p>
-
-            <div className="flex flex-col gap-4">
-
-              <a
-                href="https://wa.me/966544592923"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center bg-purple-700 hover:bg-purple-800 text-white font-semibold py-4 px-6 rounded-xl transition"
-              >
-                Contact Us on WhatsApp
-              </a>
-
-              <a
-                href="mailto:info@genius.com.sa"
-                className="text-center border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white font-semibold py-4 px-6 rounded-xl transition"
-              >
-                Email Us
-              </a>
-
-              <a
-                href="tel:+966138423946"
-                className="text-center border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white font-semibold py-4 px-6 rounded-xl transition"
-              >
-                Call Us
-              </a>
-
-            </div>
           </div>
 
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

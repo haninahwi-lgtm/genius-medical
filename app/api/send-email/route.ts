@@ -83,7 +83,13 @@ export async function POST(request: Request) {
     const { data: emailData, error: emailError } =
       await resend.emails.send({
         from: "Genius Medical <quotes@genius.com.sa>",
-        to: "hani.nahwi@gmail.com",
+
+        // All quote inquiries go to the official Genius Medical email
+        to: "info@genius.com.sa",
+
+        // When you click Reply, it replies directly to the customer
+        replyTo: email,
+
         subject: "New Quote Request - Genius Medical",
 
         html: `
@@ -149,10 +155,12 @@ export async function POST(request: Request) {
                     cellspacing="0"
                     style="border-collapse:collapse;"
                   >
+
                     <tr>
                       <td style="padding:8px 0;font-weight:bold;">
                         Name
                       </td>
+
                       <td style="padding:8px 0;">
                         ${fullName}
                       </td>
@@ -162,6 +170,7 @@ export async function POST(request: Request) {
                       <td style="padding:8px 0;font-weight:bold;">
                         Company
                       </td>
+
                       <td style="padding:8px 0;">
                         ${company || "-"}
                       </td>
@@ -171,6 +180,7 @@ export async function POST(request: Request) {
                       <td style="padding:8px 0;font-weight:bold;">
                         Email
                       </td>
+
                       <td style="padding:8px 0;">
                         <a href="mailto:${email}">
                           ${email}
@@ -182,6 +192,7 @@ export async function POST(request: Request) {
                       <td style="padding:8px 0;font-weight:bold;">
                         Phone
                       </td>
+
                       <td style="padding:8px 0;">
                         ${phone || "-"}
                       </td>
@@ -191,6 +202,7 @@ export async function POST(request: Request) {
                       <td style="padding:8px 0;font-weight:bold;">
                         Country
                       </td>
+
                       <td style="padding:8px 0;">
                         ${country || "-"}
                       </td>
@@ -200,10 +212,12 @@ export async function POST(request: Request) {
                       <td style="padding:8px 0;font-weight:bold;">
                         Address
                       </td>
+
                       <td style="padding:8px 0;">
                         ${address || "-"}
                       </td>
                     </tr>
+
                   </table>
 
                   <hr
@@ -233,8 +247,10 @@ export async function POST(request: Request) {
                       margin-top:15px;
                     "
                   >
+
                     <thead>
                       <tr style="background:#f3f3f3;">
+
                         <th
                           style="
                             padding:12px;
@@ -261,12 +277,14 @@ export async function POST(request: Request) {
                         >
                           Price
                         </th>
+
                       </tr>
                     </thead>
 
                     <tbody>
                       ${productRows}
                     </tbody>
+
                   </table>
 
                   <!-- Total -->
@@ -278,6 +296,7 @@ export async function POST(request: Request) {
                       border-left:4px solid #6d28d9;
                     "
                   >
+
                     <h2
                       style="
                         margin:0;
@@ -286,6 +305,7 @@ export async function POST(request: Request) {
                     >
                       Total: SAR ${Number(total).toFixed(2)}
                     </h2>
+
                   </div>
 
                   <hr
@@ -333,6 +353,7 @@ export async function POST(request: Request) {
       message: "Quote request saved and email sent successfully",
       email: emailData,
     });
+
   } catch (error) {
     console.error("Unexpected error:", error);
 

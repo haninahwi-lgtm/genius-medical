@@ -70,13 +70,6 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/categories"
-            className="hover:text-purple-700 transition"
-          >
-            Categories
-          </Link>
-
-          <Link
             href="/about"
             className="hover:text-purple-700 transition"
           >
@@ -145,14 +138,6 @@ export default function Header() {
               className="py-3 font-medium text-gray-700 hover:text-purple-700 border-b border-gray-100"
             >
               Products
-            </Link>
-
-            <Link
-              href="/categories"
-              onClick={closeMenu}
-              className="py-3 font-medium text-gray-700 hover:text-purple-700 border-b border-gray-100"
-            >
-              Categories
             </Link>
 
             <Link
