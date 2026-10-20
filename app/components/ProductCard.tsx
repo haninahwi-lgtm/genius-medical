@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,39 +16,37 @@ export default function ProductCard({
   link,
 }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* Product Image */}
-      <div className="w-full h-64 bg-white flex items-center justify-center p-4">
+      <div className="relative flex h-56 w-full items-center justify-center bg-white p-5 sm:h-60">
         <Image
           src={image}
           alt={name}
           width={400}
           height={300}
-          className="w-full h-full object-contain"
+          className="h-full w-full object-contain"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
 
       {/* Product Information */}
-      <div className="p-6 flex flex-col flex-1">
-
-        <h3 className="text-2xl font-bold text-purple-700">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <h3 className="text-xl font-bold leading-snug text-purple-700 sm:text-2xl">
           {name}
         </h3>
 
-        <p className="mt-3 text-gray-600 leading-7 flex-1">
+        <p className="mt-3 flex-1 leading-7 text-gray-600">
           {description}
         </p>
 
-        {/* Portfolio Button */}
+        {/* Product Details Button */}
         <Link
           href={link}
-          className="mt-6 inline-block border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white py-3 px-6 rounded-xl font-semibold text-center transition"
+          className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl border-2 border-purple-700 px-5 py-3 text-center font-semibold text-purple-700 transition-colors hover:bg-purple-700 hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-200"
         >
           View Details
         </Link>
-
       </div>
-    </div>
+    </article>
   );
 }
