@@ -4,7 +4,12 @@ import ProductCard from "./components/ProductCard";
 import { products } from "./data/products";
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 4);
+  const featuredProducts = [
+    products.find((product) => product.slug === "electric-icu-bed"),
+    products.find((product) => product.slug === "patient-monitor"),
+    products.find((product) => product.slug === "wheelchair"),
+    products.find((product) => product.slug === "soundsleep-cpap"),
+  ].filter((product) => product !== undefined);
 
   return (
     <>
@@ -36,7 +41,7 @@ export default function Home() {
                 rehabilitation centers, and other organizations.
               </p>
 
-              <div className="mt-10 flex gap-5">
+              <div className="mt-10 flex flex-wrap gap-5">
 
                 <Link
                   href="/products"
@@ -167,7 +172,6 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
-            {/* Section Heading */}
             <div className="text-center mb-12">
 
               <p className="text-purple-700 font-semibold uppercase tracking-wider">
@@ -211,6 +215,143 @@ export default function Home() {
                 className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
               >
                 View All Products
+              </Link>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
+            WHY CHOOSE GENIUS MEDICAL
+        ========================== */}
+        <section className="py-20 sm:py-24 bg-gray-100">
+
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+
+            <div className="text-center mb-12">
+
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
+                Why Choose Genius Medical?
+              </h2>
+
+              <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto leading-8">
+                We aim to make sourcing medical equipment and healthcare
+                supplies straightforward, practical, and dependable.
+              </p>
+
+            </div>
+
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+              {/* Quality & Practicality */}
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+
+                <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700 text-2xl font-bold">
+                  ✓
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold text-gray-900">
+                  Quality & Practicality
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Medical equipment and healthcare supplies selected for
+                  practical needs across different environments.
+                </p>
+
+              </div>
+
+
+              {/* Reliable Sourcing */}
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+
+                <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700 text-2xl font-bold">
+                  +
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold text-gray-900">
+                  Reliable Sourcing
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Support with finding suitable products for your equipment
+                  and healthcare supply requirements.
+                </p>
+
+              </div>
+
+
+              {/* Professional Support */}
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+
+                <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700 text-2xl font-bold">
+                  ★
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold text-gray-900">
+                  Professional Support
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Assistance with product information, availability, and
+                  identifying options for your needs.
+                </p>
+
+              </div>
+
+
+              {/* Saudi Arabia */}
+              <div className="bg-white rounded-2xl shadow-lg p-7">
+
+                <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700 text-lg font-bold">
+                  SA
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold text-gray-900">
+                  Serving Saudi Arabia
+                </h3>
+
+                <p className="mt-3 text-gray-600 leading-7">
+                  Based in Dammam, we support healthcare facilities,
+                  organizations, and home-care needs across Saudi Arabia.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
+            CONTACT CALL TO ACTION
+        ========================== */}
+        <section className="bg-white py-16 sm:py-20">
+
+          <div className="max-w-5xl mx-auto px-6 sm:px-8 text-center">
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              Looking for Medical Equipment or Healthcare Supplies?
+            </h2>
+
+            <p className="mt-5 text-lg text-gray-600 leading-8 max-w-3xl mx-auto">
+              Contact our team for product information, availability, and
+              help finding suitable equipment and supplies for your needs.
+            </p>
+
+            <div className="mt-8">
+
+              <Link
+                href="/contact"
+                className="inline-block bg-purple-700 hover:bg-purple-800 text-white px-8 py-4 rounded-xl font-semibold transition"
+              >
+                Get in Touch
               </Link>
 
             </div>
